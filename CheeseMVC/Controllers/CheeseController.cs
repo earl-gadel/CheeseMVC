@@ -11,13 +11,13 @@ namespace CheeseMVC.Controllers
     public class CheeseController : Controller
     {
 
-        static private Dictionary<string, string> Cheeses = new Dictionary<string, string>();
+        static private Dictionary<string, string> cheeses = new Dictionary<string, string>();
 
         // GET: /<controller>/
         public IActionResult Index()
         {
 
-            ViewBag.cheeses = Cheeses;
+            ViewBag.cheeses = cheeses;
             return View();
         }
 
@@ -30,7 +30,7 @@ namespace CheeseMVC.Controllers
         [Route("/Cheese/Add")]
         public IActionResult NewCheese(string name, string description)
         {
-            Cheeses.Add(name, description);
+            cheeses.Add(name, description);
 
             return Redirect("/Cheese");
         }
