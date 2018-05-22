@@ -30,7 +30,12 @@ namespace CheeseMVC.Controllers
         [Route("/Cheese/Add")]
         public IActionResult NewCheese(string name, string description)
         {
-            cheeses.Add(name, description);
+            if (cheeses.ContainsKey(name))
+                cheeses[name] = description;
+            else
+            {
+                cheeses.Add(name, description);
+            }
 
             return Redirect("/Cheese");
         }
