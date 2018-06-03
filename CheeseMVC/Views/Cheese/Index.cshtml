@@ -1,5 +1,5 @@
 ﻿@{
-    
+
 }
 
 <h1>My Cheese</h1>
@@ -12,11 +12,19 @@
 
 }
 
-<dl>
+
+<table class="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+
     @foreach (KeyValuePair<string, string> cheese in ViewBag.cheeses)
     {
-        <dt>@cheese.Key</dt>
-        <dd>@cheese.Value</dd>
+        <tr>
+            <td>@cheese.Key</td>
+            <td>@cheese.Value</td>
+        </tr>
     }
-
-</dl>
+</table>
