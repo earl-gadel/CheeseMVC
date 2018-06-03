@@ -20,7 +20,7 @@
         <th>Description</th>
     </tr>
 
-    @foreach (KeyValuePair<string, string> cheese in ViewBag.cheeses)
+    @foreach (List<Cheese> cheese in ViewBag.cheeses)
     {
         <tr>
             <td>@cheese.Key</td>
